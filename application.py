@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def index():
     # Return each endpoint
     return jsonify({'endpoints': ['/api/bmi_category', '/api/calorie_intake', '/api/ideal_weight']}), 200
 
 # Endpoint to calculate calorie intake recommendation
-@app.route('/api/calorie_intake', methods=['GET', 'POST'])
+@application.route('/api/calorie_intake', methods=['GET', 'POST'])
 def calorie_intake_recommendation():
     if request.method == 'GET':
         height = float(request.args.get('height', None))
@@ -29,7 +29,7 @@ def calorie_intake_recommendation():
     return jsonify({'calorie_intake': bmr}), 200
 
 # Endpoint to check BMI category
-@app.route('/api/bmi_category', methods=['GET', 'POST'])
+@application.route('/api/bmi_category', methods=['GET', 'POST'])
 def bmi_category():
     if request.method == 'GET':
         height = float(request.args.get('height', None))
@@ -57,7 +57,7 @@ def bmi_category():
     return jsonify({'bmi_category': category}), 200
 
 # Endpoint to calculate ideal weight based on height
-@app.route('/api/ideal_weight', methods=['GET', 'POST'])
+@application.route('/api/ideal_weight', methods=['GET', 'POST'])
 def ideal_weight():
     if request.method == 'GET':
         height = float(request.args.get('height', None))
@@ -77,4 +77,4 @@ def ideal_weight():
     return jsonify({'ideal_weight_male': ideal_weight_male, 'ideal_weight_female': ideal_weight_female}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)

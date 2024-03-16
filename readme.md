@@ -4,11 +4,6 @@ This is a Flask-based RESTful API that provides recommendations for daily calori
 
 ## API Endpoints
 
-- **GET /api/bmi_category** or **POST /api/bmi_category**
-  - Accepts JSON data or query parameters containing 'height' (in centimeters) and 'weight' (in kilograms).
-  - Calculates BMI (Body Mass Index) using the provided height and weight.
-  - Determines the BMI category (Underweight, Normal weight, Overweight, Obese).
-
 - **GET /api/calorie_intake** or **POST /api/calorie_intake**
   - Accepts JSON data or query parameters containing 'height' (in centimeters) and 'weight' (in kilograms).
   - Calculates the Basal Metabolic Rate (BMR) using a basic formula.
@@ -47,5 +42,5 @@ Example:
 ```
 
 ```bash
-GET /api/bmi_category?height=170&weight=70
+GET /api/calorie_intake?height=170&weight=70
 ```

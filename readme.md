@@ -30,7 +30,7 @@ pip install -r requirements.txt
 3. Start the Flask server:
 
 ```bash
-python app.py
+python application.py
 ```
 
 ## Usage

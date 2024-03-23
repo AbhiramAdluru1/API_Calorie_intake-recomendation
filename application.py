@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 application = Flask(__name__)
+CORS(application)
 
 @application.route('/')
 def index():
@@ -27,7 +29,6 @@ def calorie_intake_recommendation():
     bmr = 10 * weight + 6.25 * height - 5
 
     return jsonify({'calorie_intake': bmr}), 200
-
 
 # Endpoint to calculate ideal weight based on height
 @application.route('/api/ideal_weight', methods=['GET', 'POST'])

@@ -1,12 +1,13 @@
 This is a Flask-based RESTful API that provides recommendations for daily calorie intake based on height and weight and ideal weight calculation based on height.
-
+URL : http://calorieapi-env.eba-udbdxf3g.us-east-1.elasticbeanstalk.com/api/calorie_intake/
 API Endpoints
-GET /api/calorie_intake or POST /api/calorie_intake
 
+GET /api/calorie_intake or POST /api/calorie_intake
 Accepts JSON data or query parameters containing 'height' (in centimeters) and 'weight' (in kilograms).
 Returns the estimated daily calorie intake recommendation.
-GET /api/ideal_weight or POST /api/ideal_weight
 
+
+GET /api/ideal_weight or POST /api/ideal_weight
 Accepts JSON data or query parameters containing 'height' (in centimeters).
 Calculates ideal weight using a basic formula (for males only).
 Returns the calculated ideal weight for both males and females.
